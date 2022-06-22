@@ -32,3 +32,12 @@ getBeerData();
       });
     });
   }
+const beerReviews = document.getElementById('review-list');
+  document.querySelector('#review-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    let text = document.querySelector('#review-form textarea')
+    let listReveiw = document.createElement('li');
+    listReveiw.innerText = text.value;
+    beerReviews.appendChild(listReveiw);
+    document.querySelector('#review-form').reset();
+})
